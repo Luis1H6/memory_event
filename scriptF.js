@@ -11,36 +11,14 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-console.log("firebase :", firebase);
-
-/*let uploadImage = document.querySelector("#uploadImage");
-//document.getElementById("uploadImage").addEventListener("click", ()=> {
-  uploadImage.addEventListener("click", function() {
-  console.log("Reach here 2");
-  const ref = firebase.storage().ref('images/');
-  const file = document.querySelector("#photo").files[0];
-
-  const name = new Date() + '-' + file.name;
-  const metadata = {
-      contentType:file.type
-  }
-
-  const task = ref.child(name).put(file, metadata);
-  task.then(snapshot => snapshot.ref.getDownloadURL())
-        .then(url => {
-            console.log(url)
-            alert("Image Upload Successful");
-            const imageelement = document.createElement('image');
-            const image = document.querySelector('#image');
-            image.src = url;
-        })
-});*/
-
 // webcam code
 let canvas = document.getElementById('canvas');
 let snap = document.getElementById("snap");
 let video = document.getElementById("video");
 let output = document.getElementById("output");
+let myToast = document.getElementById("myToast");
+
+let uploadImage = document.getElementById("uploadImage");
 
 const constraints = {
     audio: false,
@@ -75,16 +53,16 @@ snap.addEventListener('click', function () {
     console.log(image.src);
 
     //var button = document.createElement('button');
-    button.textContent = 'Upload Image';
+    /*button.textContent = 'Upload Image';
     button.className = "btn btn-primary";
 
-    document.body.appendChild(button);
-    button.onclick = function () {
+    document.body.appendChild(button);*/
+    uploadImage.addEventListener('click', function () {
         const ref = firebase.storage().ref('images/');
         ref.child(new Date() + '-' + 'base64').putString(image.src, 'data_url')
             .then(function (snapshot) {
-                console.log("Image Uploaded");
-                alert("Image Uploaded");
+                $("#myToast").toast({ delay: 4000 });
+                $("#myToast").toast('show');
             })
             .then(
                 ref.child().listAll().then(function (result) {
@@ -93,7 +71,7 @@ snap.addEventListener('click', function () {
                     });
                 })
             )
-    }
+    })
 });
 var pics = [];
 document.getElementById('getPics').onclick = function () {
@@ -116,7 +94,7 @@ function displayImage(row, images) {
     images.getDownloadURL().then(function (url) {
         output.innerHTML += `
             <div class="col-3">
-                <div class="card">
+                <div class="card"
                     <img src="${url}" class="card-img-top">
                 </div>
             </div>
