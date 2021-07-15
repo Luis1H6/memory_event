@@ -4,8 +4,6 @@ Description: Display dynamically a gallery of Photos of a specific Event where t
 
 EPIC: Website with the menu options Home, Our Story, Party, Gallery
 
-Determinate MVP ()
-
 User Stories:
     	SDME-1: As user I want to see a menu on the website with Home & Our Story
     	SDME-2: As user I want to see a menu on the website the option Party
@@ -39,5 +37,5 @@ SDME-3
 
 Resources:
 
-HTML, CSS, JavasScript, Rest APIs, Firebase.
+HTML, CSS, JavasScript, Rest APIs, Firebase, Bootstrap.
 Bitbucket
