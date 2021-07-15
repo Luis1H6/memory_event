@@ -1,0 +1,47 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Document</title>
+    <title>My Wedding</title>
+</head>
+<body>
+    <div>
+        <!-- autoplay controls playsinline -->
+        <video id="video" width="640" height="480" autoplay></video>
+        <button id="snap" class="btn btn-success" >Capture</button>
+        <canvas id="canvas" width="640" height="480"></canvas>
+
+        <!-- <button id="btnUpload">Upload Image</button> -->
+        <img src="" id="imgConverted" style="float: left; border: 2px solid #00f; margin-left: 10px;">  
+
+        <!-- <input type="file" id="photo">
+        <img id="image" />  
+        <img src="" id="myimg" style="float: left; border: 2px solid #00f; margin-left: 10px;">  
+        -->
+    </div>
+    <div> 
+        <button id="getPics" class="btn btn-secondary">Get all pics</button>
+        <div id="output" class="row">
+
+        </div>
+    </div>
+
+
+<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+    <!-------------- FIREBASE LIBRARIES------------------------------------->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+    
+    <script src="scriptF.js"></script>
+
+</script>    
+
+</body>
+
+</html>
